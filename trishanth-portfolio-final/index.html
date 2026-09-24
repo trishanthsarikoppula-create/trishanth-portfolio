@@ -1,165 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Trishanth Sarikoppula — B.Tech Data Science student portfolio. Python, Java, SQL, MongoDB and data analysis projects.">
-  <meta name="theme-color" content="#eaf4ff">
-  <title>Trishanth Sarikoppula | Data Science</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Trishanth Sarikoppula — B.Tech Data Science student portfolio. Python, SQL, MongoDB, Java and data analysis projects.">
+
+    <meta name="theme-color" content="#eaf4ff">
+
+    <title>Trishanth Sarikoppula | Data Science</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="logo" href="#home" aria-label="Trishanth home">TS<span>.</span></a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav-actions">
-        <a class="mini-link" href="https://github.com/trishanthsarikoppula-create" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-        <a class="mini-link" href="https://www.linkedin.com/in/trishanth-sarikoppula-138904374" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-        <a class="nav-resume" href="resume.pdf" download>Download Resume</a>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> DATA SCIENCE STUDENT</p>
-          <h1>Hi, I'm <span>Trishanth Sarikoppula</span></h1>
-          <h2>Data Science Student <b>|</b> Python <b>|</b> Data Analysis <b>|</b> SQL</h2>
-          <p class="hero-lead">I build practical data-driven solutions by analysing real-world datasets, extracting meaningful patterns, and developing reliable analytical workflows. Currently pursuing B.Tech in Data Science and strengthening my skills through projects and continuous learning.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#projects">View Projects <span>→</span></a>
-            <a class="btn secondary" href="resume.pdf" download>Download Resume</a>
-            <a class="btn ghost" href="mailto:trishanthsarikoppula@gmail.com">Contact Me</a>
-          </div>
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+        <div class="container nav-container">
+
+            <a href="#home" class="logo" aria-label="Trishanth home">
+                TS<span>.</span>
+            </a>
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open navigation"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
         </div>
+    </header>
 
-        <div class="hero-photo reveal delay-1">
-          <div class="photo-frame"><img src="assets/profile.png" alt="Professional profile portrait of Trishanth Sarikoppula"></div>
-        </div>
 
-        <div class="stats reveal delay-2">
-          <div class="stat-card"><span class="stat-icon">◆</span><strong>7.68</strong><small>CGPA</small></div>
-          <div class="stat-card"><span class="stat-icon">▣</span><strong>2027</strong><small>Graduation</small></div>
-          <div class="stat-card"><span class="stat-icon">⌘</span><strong>3+</strong><small>Projects</small></div>
-          <div class="stat-card"><span class="stat-icon">◎</span><strong>Open</strong><small>To Opportunities</small></div>
-        </div>
-      </div>
-    </section>
+    <main>
 
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-label">01. ABOUT</div>
-        <div class="about-grid">
-          <div>
-            <h2 class="section-title">About Me</h2>
-            <p class="body-copy">I am a B.Tech Data Science student with a strong interest in data analysis, problem-solving and building practical solutions using data. I enjoy working with real-world datasets, understanding patterns and drawing meaningful insights.</p>
-            <p class="body-copy">I am continuously improving my technical skills through hands-on projects and self-learning, and I am open to internships and entry-level opportunities where I can contribute, learn and grow.</p>
-          </div>
-          <div class="principles">
-            <article><span>01</span><h3>Analytical Mindset</h3><p>Understand problems and find data-driven solutions.</p></article>
-            <article><span>02</span><h3>Continuous Learning</h3><p>Build skills through projects and consistent practice.</p></article>
-            <article><span>03</span><h3>Team Player</h3><p>Collaborate clearly and communicate effectively.</p></article>
-            <article><span>04</span><h3>Growth Focused</h3><p>Apply skills in professional environments and improve.</p></article>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- ================= HERO ================= -->
 
-    <section id="skills" class="section skills-section">
-      <div class="container">
-        <div class="section-label">02. SKILLS</div>
-        <div class="section-heading-row"><div><h2 class="section-title">Technical Skills</h2><p class="muted">Tools and technologies I am currently learning and applying.</p></div></div>
-        <div class="skills-grid">
-          <article class="skill-card"><span class="skill-number">01</span><h3>Python</h3><p>Programming</p></article>
-          <article class="skill-card"><span class="skill-number">02</span><h3>Java</h3><p>Programming</p></article>
-          <article class="skill-card"><span class="skill-number">03</span><h3>SQL</h3><p>Databases</p></article>
-          <article class="skill-card"><span class="skill-number">04</span><h3>MongoDB</h3><p>NoSQL database</p></article>
-          <article class="skill-card"><span class="skill-number">05</span><h3>Pandas</h3><p>Data analysis</p></article>
-          <article class="skill-card"><span class="skill-number">06</span><h3>NumPy</h3><p>Numerical computing</p></article>
-          <article class="skill-card"><span class="skill-number">07</span><h3>Matplotlib</h3><p>Visualisation</p></article>
-          <article class="skill-card"><span class="skill-number">08</span><h3>Git & GitHub</h3><p>Version control</p></article>
-          <article class="skill-card"><span class="skill-number">09</span><h3>Jupyter</h3><p>Development</p></article>
-          <article class="skill-card"><span class="skill-number">10</span><h3>Google Colab</h3><p>Cloud development</p></article>
-        </div>
-      </div>
-    </section>
+        <section class="hero section" id="home">
 
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-label">03. PROJECTS</div>
-        <div class="project-layout">
-          <div class="project-intro"><h2 class="section-title">Featured Project</h2><p class="body-copy">A detailed data analysis and prediction project using student academic and study-habit data.</p></div>
-          <article class="project-card reveal">
-            <div class="project-top">
-              <div><span class="project-kicker">PYTHON · DATA ANALYSIS</span><h3>Student Performance Analysis & Prediction</h3><p>An end-to-end analysis of student academic and behavioural data, followed by regression modelling to predict final examination scores.</p></div>
-              <div class="project-actions">
-                <a class="btn primary small" href="https://github.com/trishanthsarikoppula-create/trishanth-portfolio/blob/main/Student_Performance_Analysis_Prediction.ipynb" target="_blank" rel="noopener">View Notebook ↗</a>
-                <a class="btn secondary small" href="student_performance_dataset.csv" download>View Dataset ↓</a>
-                <a class="btn ghost small" href="https://github.com/trishanthsarikoppula-create/trishanth-portfolio" target="_blank" rel="noopener">GitHub ↗</a>
-              </div>
+            <div class="container hero-grid">
+
+                <div class="hero-content reveal">
+
+                    <p class="eyebrow">
+                        DATA SCIENCE STUDENT
+                    </p>
+
+                    <h1>
+                        Turning data into
+                        <span>meaningful insights.</span>
+                    </h1>
+
+                    <p class="hero-text">
+                        I'm Trishanth Sarikoppula, a B.Tech Data Science student
+                        focused on Python, data analysis, SQL, MongoDB and Java.
+                        I build practical projects that turn raw data into
+                        understandable results.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#projects" class="btn btn-primary">
+                            View Projects
+                        </a>
+
+                        <a href="#contact" class="btn btn-secondary">
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                    <div class="quick-stats">
+
+                        <div class="stat">
+                            <strong>7.68</strong>
+                            <span>CGPA</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>2027</strong>
+                            <span>Graduation</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>01</strong>
+                            <span>Featured Project</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE CARD -->
+
+                <div class="hero-profile reveal">
+
+                    <div class="profile-card">
+
+                        <div class="profile-image-wrap">
+                            <img
+                                src="assets/profile.jpg"
+                                alt="Trishanth Sarikoppula"
+                                class="profile-image">
+                        </div>
+
+                        <div class="profile-info">
+
+                            <p class="profile-label">
+                                CURRENTLY BUILDING
+                            </p>
+
+                            <h2>
+                                Practical data projects.
+                            </h2>
+
+                            <p>
+                                Exploring data analysis, programming,
+                                databases and applied analytics.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-            <div class="metrics">
-              <div><span>Dataset</span><strong>1,000</strong><small>records</small></div>
-              <div><span>Features</span><strong>12</strong><small>columns</small></div>
-              <div><span>Model</span><strong>Linear Regression</strong><small>baseline model</small></div>
-              <div><span>R²</span><strong>0.6174</strong><small>test-set score</small></div>
-              <div><span>MAE</span><strong>4.98</strong><small>test-set error</small></div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="section section-soft" id="about">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">01</span>
+
+                    <div>
+                        <p class="eyebrow">ABOUT ME</p>
+
+                        <h2>
+                            Building a strong foundation in data.
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-main reveal">
+
+                        <p class="lead">
+                            I am a B.Tech Data Science student developing
+                            practical skills in programming, data analysis,
+                            databases and software development.
+                        </p>
+
+                        <p>
+                            My approach is simple: understand the data first,
+                            identify meaningful patterns, build solutions
+                            systematically and evaluate the results clearly.
+                        </p>
+
+                        <p>
+                            I am currently strengthening my skills through
+                            academic work, hands-on projects and continuous
+                            technical practice.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-details reveal">
+
+                        <div class="detail-item">
+                            <span>Degree</span>
+                            <strong>B.Tech — Data Science</strong>
+                        </div>
+
+                        <div class="detail-item">
+                            <span>Graduation</span>
+                            <strong>2027</strong>
+                        </div>
+
+                        <div class="detail-item">
+                            <span>CGPA</span>
+                            <strong>7.68</strong>
+                        </div>
+
+                        <div class="detail-item">
+                            <span>Focus</span>
+                            <strong>Data & Software</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-            <div class="project-bottom">
-              <div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Data Analysis</span></div>
-              <ul>
-                <li>Performed data cleaning and preprocessing.</li>
-                <li>Explored patterns and correlations in the data.</li>
-                <li>Built and evaluated a regression model.</li>
-              </ul>
+
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+
+        <section class="section" id="skills">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">02</span>
+
+                    <div>
+                        <p class="eyebrow">SKILLS</p>
+
+                        <h2>
+                            Technical toolkit.
+                        </h2>
+
+                        <p class="section-description">
+                            Technologies I am currently learning and applying
+                            through coursework and projects.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill-card reveal">
+                        <span class="skill-index">01</span>
+                        <h3>Programming</h3>
+
+                        <div class="skill-list">
+                            <span>Python</span>
+                            <span>Java</span>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-card reveal">
+                        <span class="skill-index">02</span>
+                        <h3>Data Analysis</h3>
+
+                        <div class="skill-list">
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                            <span>Matplotlib</span>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-card reveal">
+                        <span class="skill-index">03</span>
+                        <h3>Databases</h3>
+
+                        <div class="skill-list">
+                            <span>SQL</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-card reveal">
+                        <span class="skill-index">04</span>
+                        <h3>Tools</h3>
+
+                        <div class="skill-list">
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>Google Colab</span>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section id="education" class="section education-section">
-      <div class="container">
-        <div class="section-label">04. EDUCATION</div>
-        <h2 class="section-title">Education</h2>
-        <div class="education-grid">
-          <article class="education-main"><div class="edu-dot"></div><div><span class="edu-date">2023 – 2027</span><h3>B.Tech – Computer Science Engineering (Data Science)</h3><p>DRK Institute of Science and Technology · Hyderabad, India</p></div><strong class="badge">CGPA: 7.68 / 10</strong></article>
-          <article class="education-small"><span class="edu-date">Intermediate – MPC</span><h3>Vignan Junior College</h3><strong class="badge">69.7%</strong></article>
-          <article class="education-small"><span class="edu-date">10th Class</span><h3>MPS High School</h3><strong class="badge">CGPA: 10 / 10</strong></article>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact-section">
-      <div class="container contact-wrap">
-        <div><div class="section-label">05. CONTACT</div><h2>Let's Connect</h2><p>Open to internships, entry-level opportunities, projects and technical collaboration.</p></div>
-        <div class="contact-links">
-          <button class="contact-card" id="copyEmail" type="button"><span>✉</span><div><small>Email</small><strong>trishanthsarikoppula@gmail.com</strong></div><em>Copy</em></button>
-          <a class="contact-card" href="https://www.linkedin.com/in/trishanth-sarikoppula-138904374" target="_blank" rel="noopener"><span>in</span><div><small>LinkedIn</small><strong>View profile</strong></div><em>↗</em></a>
-          <a class="contact-card" href="https://github.com/trishanthsarikoppula-create" target="_blank" rel="noopener"><span>GH</span><div><small>GitHub</small><strong>View repositories</strong></div><em>↗</em></a>
-          <a class="btn primary resume-final" href="resume.pdf" download>Download Resume ↓</a>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer><div class="container footer-wrap"><strong>TS.</strong><span>Trishanth Sarikoppula · Data Science Student · 2027</span><span>© <span id="year"></span> Trishanth Sarikoppula</span></div></footer>
-  <script src="script.js"></script>
+        <!-- ================= PROJECTS ================= -->
+
+        <section class="section section-soft" id="projects">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">03</span>
+
+                    <div>
+                        <p class="eyebrow">PROJECTS</p>
+
+                        <h2>
+                            Work that demonstrates the process.
+                        </h2>
+
+                        <p class="section-description">
+                            A project-focused section showing how I work with
+                            data from exploration to results.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <article class="project-card reveal">
+
+                    <div class="project-top">
+
+                        <div>
+                            <p class="project-number">
+                                FEATURED PROJECT · 01
+                            </p>
+
+                            <h3>
+                                Student Performance Analysis & Prediction
+                            </h3>
+                        </div>
+
+                        <span class="project-year">
+                            2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-description">
+
+                            <p>
+                                An exploratory data analysis and prediction
+                                project focused on understanding how study
+                                habits, attendance, sleep, previous grades
+                                and other factors relate to student
+                                examination performance.
+                            </p>
+
+                            <p>
+                                The project uses Python-based data analysis
+                                to inspect the dataset, identify patterns,
+                                evaluate relationships and build a predictive
+                                workflow.
+                            </p>
+
+                        </div>
+
+
+                        <div class="project-meta">
+
+                            <div class="meta-row">
+                                <span>Dataset</span>
+                                <strong>1,000 records</strong>
+                            </div>
+
+                            <div class="meta-row">
+                                <span>Features</span>
+                                <strong>12 columns</strong>
+                            </div>
+
+                            <div class="meta-row">
+                                <span>Primary tools</span>
+                                <strong>Python · Pandas · NumPy</strong>
+                            </div>
+
+                            <div class="meta-row">
+                                <span>Visualization</span>
+                                <strong>Matplotlib</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Matplotlib</span>
+                        <span>Data Analysis</span>
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="Student_Performance_Analysis_Prediction.ipynb"
+                            class="text-link"
+                            target="_blank"
+                            rel="noopener">
+                            View Notebook ↗
+                        </a>
+
+                        <a
+                            href="student_performance_dataset.csv"
+                            class="text-link"
+                            target="_blank"
+                            rel="noopener">
+                            View Dataset ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EDUCATION ================= -->
+
+        <section class="section" id="education">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">04</span>
+
+                    <div>
+                        <p class="eyebrow">EDUCATION</p>
+
+                        <h2>
+                            Academic foundation.
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="education-card reveal">
+
+                    <div class="education-main">
+
+                        <p class="education-label">
+                            BACHELOR OF TECHNOLOGY
+                        </p>
+
+                        <h3>
+                            Data Science
+                        </h3>
+
+                        <p>
+                            Dr. K. Engineering College
+                        </p>
+
+                    </div>
+
+
+                    <div class="education-side">
+
+                        <div>
+                            <span>Expected Graduation</span>
+                            <strong>2027</strong>
+                        </div>
+
+                        <div>
+                            <span>Current CGPA</span>
+                            <strong>7.68</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESUME ================= -->
+
+        <section class="resume-section">
+
+            <div class="container">
+
+                <div class="resume-card reveal">
+
+                    <div>
+                        <p class="eyebrow">RESUME</p>
+
+                        <h2>
+                            Want the complete profile?
+                        </h2>
+
+                        <p>
+                            View my resume for a detailed overview of my
+                            education, technical skills, projects and
+                            qualifications.
+                        </p>
+                    </div>
+
+
+                    <div class="resume-actions">
+
+                        <a
+                            href="resume.pdf"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-light">
+                            View Resume
+                        </a>
+
+                        <a
+                            href="resume.pdf"
+                            download="Trishanth_Sarikoppula_Resume.pdf"
+                            class="btn btn-outline-light">
+                            Download Resume
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section class="section" id="contact">
+
+            <div class="container contact-grid">
+
+                <div class="contact-heading reveal">
+
+                    <span class="section-number">05</span>
+
+                    <p class="eyebrow">CONTACT</p>
+
+                    <h2>
+                        Let's connect.
+                    </h2>
+
+                    <p>
+                        Open to internships, entry-level opportunities,
+                        technical discussions and project collaboration.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-links reveal">
+
+                    <!-- Replace these placeholders with your actual links -->
+
+                    <a
+                        href="mailto:YOUR_EMAIL@gmail.com"
+                        class="contact-item">
+
+                        <span>Email</span>
+                        <strong>YOUR_EMAIL@gmail.com ↗</strong>
+
+                    </a>
+
+
+                    <a
+                        href="https://github.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="contact-item">
+
+                        <span>GitHub</span>
+                        <strong>View GitHub Profile ↗</strong>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="contact-item">
+
+                        <span>LinkedIn</span>
+                        <strong>View LinkedIn Profile ↗</strong>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <p>
+                © <span id="year"></span> Trishanth Sarikoppula
+            </p>
+
+            <p>
+                Data Science · Python · SQL · Java · MongoDB
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>
