@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Performance Dataset | Trishanth Sarikoppula</title>
+
+  <style>
+    :root {
+      --blue: #1267d6;
+      --navy: #071633;
+      --muted: #60708d;
+      --line: #dce9f7;
+      --pale: #edf6ff;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--navy);
+      background: #f8fbff;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--navy);
+      border: 1px solid var(--line);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .back:hover {
+      background: var(--pale);
+      color: var(--blue);
+    }
+
+    main {
+      max-width: 1250px;
+      margin: auto;
+      padding: 55px 24px 80px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+    }
+
+    .intro {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .search {
+      width: min(450px, 100%);
+      padding: 13px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      background: white;
+    }
+
+    .search:focus {
+      border-color: var(--blue);
+    }
+
+    .count {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .table-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: auto;
+      box-shadow: 0 8px 30px rgba(42, 89, 140, .07);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1100px;
+    }
+
+    th {
+      background: var(--pale);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      text-align: left;
+      padding: 15px 14px;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid #edf2f8;
+      color: #334563;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    tr:hover td {
+      background: #f8fbff;
+    }
+
+    .loading {
+      padding: 35px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .error {
+      padding: 30px;
+      color: #b42318;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <a class="logo" href="index.html">TS.</a>
+      <a class="back" href="index.html">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="eyebrow">PROJECT DATASET</div>
+
+    <h1>Student Performance Dataset</h1>
+
+    <p class="intro">
+      Dataset used for the Student Performance Analysis & Prediction project.
+      Explore the records and variables directly in the browser.
+    </p>
+
+    <div class="toolbar">
+      <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="Search the dataset..."
+      >
+
+      <span id="count" class="count">Loading dataset...</span>
+    </div>
+
+    <div class="table-card">
+      <div id="tableContainer" class="loading">
+        Loading dataset...
+      </div>
+    </div>
+
+    <footer>
+      Student Performance Analysis & Prediction · Trishanth Sarikoppula
+    </footer>
+
+  </main>
+
+  <script>
+    const csvFile = "student_performance_dataset.csv";
+
+    const searchInput = document.getElementById("search");
+    const tableContainer = document.getElementById("tableContainer");
+    const countElement = document.getElementById("count");
+
+    let headers = [];
+    let rows = [];
+
+    function parseCSV(text) {
+      const result = [];
+      let row = [];
+      let value = "";
+      let insideQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && insideQuotes && next === '"') {
+          value += '"';
+          i++;
+        } else if (char === '"') {
+          insideQuotes = !insideQuotes;
+        } else if (char === "," && !insideQuotes) {
+          row.push(value);
+          value = "";
+        } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+          if (char === "\r" && next === "\n") {
+            i++;
+          }
+
+          row.push(value);
+          value = "";
+
+          if (row.some(cell => cell.trim() !== "")) {
+            result.push(row);
+          }
+
+          row = [];
+        } else {
+          value += char;
+        }
+      }
+
+      if (value !== "" || row.length > 0) {
+        row.push(value);
+
+        if (row.some(cell => cell.trim() !== "")) {
+          result.push(row);
+        }
+      }
+
+      return result;
+    }
+
+    function renderTable(filteredRows) {
+      if (!filteredRows.length) {
+        tableContainer.innerHTML =
+          '<div class="loading">No matching records found.</div>';
+
+        countElement.textContent = "0 records";
+        return;
+      }
+
+      let html = "<table>";
+
+      html += "<thead><tr>";
+
+      headers.forEach(header => {
+        html += `<th>${escapeHTML(header)}</th>`;
+      });
+
+      html += "</tr></thead><tbody>";
+
+      filteredRows.forEach(row => {
+        html += "<tr>";
+
+        headers.forEach((_, index) => {
+          const value = row[index] ?? "";
+          html += `<td>${escapeHTML(value)}</td>`;
+        });
+
+        html += "</tr>";
+      });
+
+      html += "</tbody></table>";
+
+      tableContainer.innerHTML = html;
+
+      countElement.textContent =
+        `${filteredRows.length.toLocaleString()} records`;
+    }
+
+    function escapeHTML(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    searchInput.addEventListener("input", function () {
+      const query = this.value.toLowerCase().trim();
+
+      if (!query) {
+        renderTable(rows);
+        return;
+      }
+
+      const filtered = rows.filter(row =>
+        row.some(cell =>
+          String(cell).toLowerCase().includes(query)
+        )
+      );
+
+      renderTable(filtered);
+    });
+
+    fetch(csvFile)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Dataset could not be loaded.");
+        }
+
+        return response.text();
+      })
+      .then(text => {
+        const data = parseCSV(text);
+
+        headers = data[0];
+        rows = data.slice(1);
+
+        renderTable(rows);
+      })
+      .catch(error => {
+        console.error(error);
+
+        tableContainer.innerHTML = `
+          <div class="error">
+            Unable to load the dataset.
+            <br><br>
+            Please check that
+            <strong>student_performance_dataset.csv</strong>
+            exists in the repository.
+          </div>
+        `;
+
+        countElement.textContent = "Dataset unavailable";
+      });
+  </script>
+
+</body>
+</html>
